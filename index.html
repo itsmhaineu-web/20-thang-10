@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chúc mừng 20/10 💐</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Be+Vietnam+Pro:wght@400;500&display=swap">
+<style>
+:root{--bg1:#fff0f5;--bg2:#ffd9e6;--card:#ffffffcc;--text:#5a2a3c;--accent:#e0507a;--soft:#a5607a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a1420;--bg2:#3d1a2c;--card:#4a2336cc;--text:#ffe3ec;--accent:#ff8fb0;--soft:#e0a9bc}}
+:root[data-theme="dark"]{--bg1:#2a1420;--bg2:#3d1a2c;--card:#4a2336cc;--text:#ffe3ec;--accent:#ff8fb0;--soft:#e0a9bc}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;
+background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--text);font-family:"Be Vietnam Pro",system-ui,sans-serif;text-align:center}
+.card{width:100%;max-width:440px;background:var(--card);border-radius:28px;padding:32px 24px;backdrop-filter:blur(6px);box-shadow:0 10px 40px #e0507a33}
+h1{font-family:"Dancing Script",cursive,serif;font-size:2.4rem;margin:0 0 6px;color:var(--accent)}
+p.sub{margin:0 0 22px;color:var(--soft)}
+input{width:100%;padding:14px 18px;border-radius:999px;border:2px solid var(--accent);background:transparent;color:var(--text);font:inherit;font-size:1.05rem;text-align:center;outline:none;margin-bottom:14px}
+input::placeholder{color:var(--soft)}
+button{font:inherit;cursor:pointer;border:0;border-radius:999px;padding:13px 28px;background:var(--accent);color:#fff;font-weight:500;font-size:1rem}
+button.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);padding:9px 20px;font-size:.9rem;margin:6px 4px 0}
+[hidden]{display:none!important}
+.ov{position:fixed;inset:0;z-index:10;background:#000a;display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
+.ov .box{background:var(--bg1);border-radius:20px;padding:16px;max-width:380px;width:100%}
+.ov img{width:100%;border-radius:12px;display:block}
+.lnk{display:inline-block;text-decoration:none}
+svg{width:100%;max-width:300px;height:auto;overflow:visible}
+.petals,.bud{transform-box:fill-box;transform-origin:center;animation:bloom .9s cubic-bezier(.2,1.4,.4,1) both}
+.stem{stroke-dasharray:260;stroke-dashoffset:260;animation:grow .8s ease-out forwards}
+@keyframes bloom{from{transform:scale(0) rotate(-40deg)}to{transform:scale(1) rotate(0)}}
+@keyframes grow{to{stroke-dashoffset:0}}
+.wish{margin:10px 0 0;opacity:0;animation:fade 1s 2s ease forwards}
+.wish .to{font-family:"Dancing Script",cursive,serif;font-size:1.9rem;color:var(--accent)}
+.wish .msg{line-height:1.65;margin:8px 0 0}
+.acts{opacity:0;animation:fade 1s 2.6s ease forwards;margin-top:14px}
+@keyframes fade{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important}}
+</style>
+</head>
+<body>
+<div class="ov" id="ov" hidden><div class="box"><img id="img" alt="Ảnh bó hoa"><p class="sub">Nhấn giữ vào ảnh để lưu về máy</p><a id="dl" download="hoa-20-10.png" class="ghost lnk">Tải ảnh</a><button class="ghost" id="cl">Đóng</button></div></div>
+<main class="card">
+  <section id="ask">
+    <h1>Bạn luôn là một bông hoa đẹp nhất 💐</h1>
+    <p class="sub">Nhập tên của bạn để nhận quà 20/10</p>
+    <input id="name" maxlength="30" placeholder="Tên của bạn…" autocomplete="off">
+    <button id="go">Nhận hoa</button>
+  </section>
+  <section id="show" hidden>
+    <svg id="bq" viewBox="0 0 300 340" aria-label="Bó hoa"></svg>
+    <div class="wish"><div class="to" id="to"></div><p class="msg" id="msg"></p></div>
+    <div class="acts">
+      <button class="ghost" id="save">📷 Lưu ảnh</button>
+      <button class="ghost" id="share">💌 Chia sẻ</button>
+      <p id="note" class="sub" style="font-size:.85rem;margin-top:8px;word-break:break-all"></p>
+    </div>
+  </section>
+</main>
+<script>
+var WISHES=[
+"Chúc bạn luôn rạng rỡ như đóa hoa đầu mùa, được yêu thương thật nhiều và mỉm cười mỗi ngày.",
+"Mong mọi điều dịu dàng nhất sẽ đến với bạn: bình yên trong tim, niềm vui trong mắt và hạnh phúc trong từng ngày.",
+"Cảm ơn bạn vì đã luôn tỏa sáng và làm cho cuộc sống xung quanh thêm đẹp. Chúc bạn 20/10 thật ngọt ngào!",
+"Chúc bạn mạnh mẽ, tự tin và luôn được là chính mình. Mọi ước mơ của bạn rồi sẽ nở hoa.",
+"Hôm nay và mọi ngày, mong bạn được nâng niu, trân trọng và nhận về thật nhiều điều tốt đẹp."
+];
+var COL=["#ff6f9c","#ffb3c7","#ff8fb0","#f9c74f","#c77dff","#ff5d8f","#ffd6e0"];
+var POS=[[150,85,34],[92,125,30],[208,125,30],[58,180,26],[242,180,26],[122,170,28],[180,165,28]];
+var NS="http://www.w3.org/2000/svg";
+function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function drawBouquet(){
+  var s=document.getElementById("bq");s.textContent="";
+  POS.forEach(function(f,i){
+    el("path",{d:"M150 300 Q"+((150+f[0])/2)+" "+((300+f[1])/2+20)+" "+f[0]+" "+f[1],stroke:"#4f9d5d","stroke-width":4,fill:"none","stroke-linecap":"round",class:"stem",style:"animation-delay:"+(i*.12)+"s"},s);
+  });
+  [[110,215,-30],[190,215,30],[130,240,-50],[170,240,50]].forEach(function(l){
+    el("ellipse",{cx:l[0],cy:l[1],rx:10,ry:24,fill:"#5fb36f",transform:"rotate("+l[2]+" "+l[0]+" "+l[1]+")",class:"bud",style:"animation-delay:.9s"},s);
+  });
+  POS.forEach(function(f,i){
+    var g=el("g",{class:"petals",style:"animation-delay:"+(0.7+i*.17)+"s"},s);
+    for(var k=0;k<8;k++){
+      el("ellipse",{cx:f[0],cy:f[1]-f[2]*.55,rx:f[2]*.32,ry:f[2]*.5,fill:COL[i%COL.length],opacity:.95,transform:"rotate("+(k*45)+" "+f[0]+" "+f[1]+")"},g);
+    }
+    el("circle",{cx:f[0],cy:f[1],r:f[2]*.28,fill:"#ffe08a"},g);
+  });
+  var w=el("g",{class:"bud",style:"animation-delay:1.9s"},s);
+  el("path",{d:"M62 218 Q150 200 238 218 L168 330 Q150 338 132 330 Z",fill:"#f6c1d2",stroke:"#e0507a","stroke-width":2},w);
+  el("path",{d:"M100 232 L150 330 L200 232",fill:"none",stroke:"#fff","stroke-width":2,opacity:.6},w);
+  el("path",{d:"M128 262 L172 262 L162 284 L138 284 Z",fill:"#e0507a"},w);
+  el("circle",{cx:150,cy:262,r:9,fill:"#c93a64"},w);
+}
+function pick(n){var h=0;for(var i=0;i<n.length;i++)h=(h*31+n.charCodeAt(i))>>>0;return WISHES[h%WISHES.length]}
+function show(n){
+  n=n.trim();if(!n)return;
+  document.getElementById("to").textContent="Gửi "+n+" 💖";
+  document.getElementById("msg").textContent="Nhân ngày 20/10, "+pick(n.toLowerCase());
+  document.getElementById("ask").hidden=true;
+  var sh=document.getElementById("show");sh.hidden=false;
+  var w=sh.querySelector(".wish"),a=sh.querySelector(".acts");
+  [w,a].forEach(function(x){x.style.animation="none";void x.offsetWidth;x.style.animation=""});
+  drawBouquet();
+}
+function link(){
+  var n=document.getElementById("name").value.trim();
+  return location.href.split("?")[0].split("#")[0]+(n?"?ten="+encodeURIComponent(n):"");
+}
+document.getElementById("go").onclick=function(){show(document.getElementById("name").value)};
+document.getElementById("name").onkeydown=function(e){if(e.key==="Enter")show(this.value)};
+function makeBlob(cb){
+  var svg=new XMLSerializer().serializeToString(document.getElementById("bq")).replace("<svg ",'<svg width="600" height="680" ');
+  var to=document.getElementById("to").textContent,msg=document.getElementById("msg").textContent;
+  var im=new Image();
+  im.onload=function(){
+    (document.fonts?document.fonts.ready:Promise.resolve()).then(function(){
+      var W=1080,H=1500,c=document.createElement("canvas");c.width=W;c.height=H;var x=c.getContext("2d");
+      var g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,"#fff0f5");g.addColorStop(1,"#ffd9e6");
+      x.fillStyle=g;x.fillRect(0,0,W,H);x.textAlign="center";x.fillStyle="#e0507a";
+      x.font="600 64px 'Dancing Script',cursive,serif";x.fillText("Chúc mừng 20/10",W/2,120);
+      x.drawImage(im,140,160,800,907);
+      x.font="600 72px 'Dancing Script',cursive,serif";x.fillText(to,W/2,1150);
+      x.fillStyle="#5a2a3c";x.font="36px 'Be Vietnam Pro',sans-serif";
+      var words=msg.split(" "),line="",y=1220;
+      words.forEach(function(w){var t=line?line+" "+w:w;if(x.measureText(t).width>880){x.fillText(line,W/2,y);y+=54;line=w}else line=t});
+      x.fillText(line,W/2,y);
+      c.toBlob(cb,"image/png");
+    });
+  };
+  im.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
+}
+document.getElementById("save").onclick=function(){
+  makeBlob(function(b){
+    var u=URL.createObjectURL(b);
+    document.getElementById("img").src=u;document.getElementById("dl").href=u;
+    document.getElementById("ov").hidden=false;
+  });
+};
+document.getElementById("cl").onclick=function(){document.getElementById("ov").hidden=true};
+document.getElementById("share").onclick=function(){
+  var u=link(),note=document.getElementById("note"),txt=document.getElementById("to").textContent+" — chúc mừng 20/10 💐";
+  function fallback(){try{navigator.clipboard.writeText(u).then(function(){note.textContent="Đã sao chép link để bạn gửi đi!"},function(){note.textContent=u})}catch(e){note.textContent=u}}
+  makeBlob(function(b){
+    var f=new File([b],"hoa-20-10.png",{type:"image/png"});
+    try{
+      if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],text:txt,url:u}).catch(function(){})}
+      else if(navigator.share){navigator.share({text:txt,url:u}).catch(function(){})}
+      else fallback();
+    }catch(e){fallback()}
+  });
+};
+try{var q=new URLSearchParams(location.search).get("ten");if(q){document.getElementById("name").value=q;show(q)}}catch(e){}
+</script>
+</body>
+</html>
